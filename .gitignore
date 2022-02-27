@@ -1,4 +1,8 @@
 #助记词
 .secret
-#infura api地址
+#api地址
 .api
+#私钥地址
+.privatekey
+#node
+**/node_modules/
