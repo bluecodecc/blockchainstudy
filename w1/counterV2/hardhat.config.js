@@ -1,20 +1,24 @@
 require("@nomiclabs/hardhat-waffle");
 const fs = require('fs');
+const { url } = require("inspector");
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 
- const ALCHEMY_API_KEY = "KEY";
- const ROPSTEN_PRIVATE_KEY = fs.readFileSync(".privateKey").toString().trim();
- const API = fs.readFileSync(".api").toString().trim();
+const NETWORK = JSON.parse(fs.readFileSync('./.url', 'utf-8'));
+const PRIVATE_KEY = JSON.parse(fs.readFileSync('./.privateKey', 'utf-8'));
 
 module.exports = {
   solidity: "0.8.11",
   networks: {
     ropsten: {
-      url: API,
-      accounts: [`0x${ROPSTEN_PRIVATE_KEY}`]
+      url: NETWORK.ropsten,
+      accounts: PRIVATE_KEY.ropsten
+    },
+    ganache: {
+      url: NETWORK.ganache,
+      accounts: PRIVATE_KEY.ganache
     }
   }
 };
