@@ -1,3 +1,6 @@
+const { artifacts, network } = require("hardhat");
+const { writeAbiAddr } = require("./saveContractInfo");
+
 async function main() {
 
     const [deployer] = await ethers.getSigners();
@@ -11,6 +14,8 @@ async function main() {
 
     const Counter = await ethers.getContractFactory("Counter");
     const counter = await Counter.deploy();
+    
+    writeAbiAddr((await artifacts.readArtifact("Counter")),counter.address,network.name);
     console.log("Counter address:", counter.address);
 
     console.log("default counter", (await counter.counter()).toString());
