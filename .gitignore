@@ -1,7 +1,8 @@
 #助记词
 .secret
-#api地址
+#区块链网络地址
 .api
+.network
 #私钥地址
 .privatekey
 #node
