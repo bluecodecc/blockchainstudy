@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: Unlicense
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract Bank {
@@ -13,6 +13,7 @@ contract Bank {
     receive() external payable {
         balances[msg.sender] += msg.value;
     }
+
     //只有所有者可以提现
     function withdraw(uint256 amount) external onlyOwner {
         payable(msg.sender).transfer(amount);

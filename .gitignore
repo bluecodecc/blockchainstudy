@@ -2,6 +2,7 @@
 .secret
 #区块链网络地址
 .api
+.url
 .network
 #私钥地址
 .privatekey

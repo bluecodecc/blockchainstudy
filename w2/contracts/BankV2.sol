@@ -1,8 +1,6 @@
-//SPDX-License-Identifier: Unlicense
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import "hardhat/console.sol";
-
-contract Bank {
+contract Bankv2 {
     address payable public owner;
     address payable public winner;
     mapping(address=>uint) public balances;
