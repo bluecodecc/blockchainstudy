@@ -5,6 +5,7 @@
 - [x]  可动态增发（起始发⾏量是 0）
 - [x]  通过 ethers.js. 调⽤合约进⾏转账
 
+![执行记录](./images/mytoken.png)
 实现了一个[MyToken](./code/MyToken.sol)继承自一个实现了[标准ERC20接口](./code/IERC20.sol)的[ERC20](./code/ERC20.sol)
 
 通过扩展实现`function mint(address account, uint256 amount) external onlyOwner`方法控制代币的增发
@@ -25,4 +26,6 @@
 通过[deployVault.js](../code/scripts/deployVault.js)脚本部署
 
 可以通过基于ethers.js的[脚本](./scripts/actionWithVault.js)与合约进行交互
+
+![执行记录](./images/vaule.png)
 
